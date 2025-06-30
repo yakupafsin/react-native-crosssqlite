@@ -16,11 +16,16 @@
     "lib",
     "android",
     "ios",
+    "windows",
     "cpp",
     "*.podspec",
     "react-native.config.js",
     "!ios/build",
     "!android/build",
+    "!windows/Crosssqlite/Debug",
+    "!windows/Crosssqlite/Release",
+    "!windows/Crosssqlite/x64",
+    "!windows/Crosssqlite/ARM64",
     "!android/gradle",
     "!android/gradlew",
     "!android/gradlew.bat",
@@ -42,7 +47,8 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "windows"
   ],
   "repository": {
     "type": "git",
@@ -153,7 +159,8 @@
     "jsSrcsDir": "src",
     "outputDir": {
       "ios": "ios/generated",
-      "android": "android/generated"
+      "android": "android/generated",
+      "windows": "windows/Crosssqlite/generated"
     },
     "android": {
       "javaPackageName": "com.crosssqlite"
@@ -164,5 +171,8 @@
     "type": "turbo-module",
     "languages": "cpp",
     "version": "0.49.2"
+  },
+  "dependencies": {
+    "expo-nearby-connections": "^1.0.0"
   }
 }

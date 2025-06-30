@@ -1,0 +1,10 @@
+{
+  "type": "ReactPackageProvider",
+  "className": "Crosssqlite.ReactPackageProvider",
+  "cppHeaders": [
+    "ReactPackageProvider.h"
+  ],
+  "cppPackageProviders": [
+    "winrt::Crosssqlite::ReactPackageProvider"
+  ]
+}
