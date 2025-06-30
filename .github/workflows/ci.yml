@@ -133,6 +133,14 @@ jobs:
             echo "turbo_cache_hit=1" >> $GITHUB_ENV
           fi
 
+      - name: Setup Ruby
+        if: env.turbo_cache_hit != 1
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+          working-directory: example
+
       - name: Restore cocoapods
         if: env.turbo_cache_hit != 1
         id: cocoapods-cache
@@ -148,7 +156,10 @@ jobs:
         if: env.turbo_cache_hit != 1 && steps.cocoapods-cache.outputs.cache-hit != 'true'
         run: |
           cd example/ios
-          pod install
+          # Clean any existing pods but keep Podfile.lock
+          rm -rf Pods
+          # Install pods with bundle exec
+          bundle exec pod install
         env:
           NO_FLIPPER: 1
 
