@@ -161,6 +161,13 @@ npx react-native run-android
 npx react-native run-windows
 ```
 
+## 🚀 Releases
+
+This package uses automated releases through GitHub Actions. See [RELEASE.md](RELEASE.md) for details on how to create releases and publish to npm.
+
+[![npm version](https://badge.fury.io/js/react-native-crosssqlite.svg)](https://badge.fury.io/js/react-native-crosssqlite)
+[![GitHub release](https://img.shields.io/github/release/yakupafsin/react-native-crosssqlite.svg)](https://github.com/yakupafsin/react-native-crosssqlite/releases)
+
 ## 🤝 Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
