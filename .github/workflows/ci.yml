@@ -138,8 +138,20 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: true
+          bundler: '2.4.22'
+          bundler-cache: false
           working-directory: example
+
+      - name: Install Ruby dependencies
+        if: env.turbo_cache_hit != 1
+        run: |
+          cd example
+          # Clean any existing bundle config
+          rm -rf .bundle
+          # Install modern bundler
+          gem install bundler -v '~> 2.4'
+          # Install gems without deployment mode
+          bundle install --no-deployment
 
       - name: Restore cocoapods
         if: env.turbo_cache_hit != 1
